@@ -15,6 +15,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Bus;
 use Spatie\LaravelData\PaginatedDataCollection;
+use Spatie\RouteAttributes\Attributes\Get;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\Route;
 
@@ -34,7 +35,7 @@ class UserController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    #[Route('GET', '/', 'users.index')]
+    #[Get('/', name: 'users.index')]
     public function index(Request $request): JsonResponse
     {
         $filter = [];
